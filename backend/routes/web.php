@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/a/{str}',function ($str) {
+    return view('a',compact('str'));
 });
+
+//Route::get('/','PageController@index');
+Route::get('/',[PageController::class,'index']);
